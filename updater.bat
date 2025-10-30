@@ -138,7 +138,7 @@ IF DEFINED _log (
 )
 IF EXIST user.js.new (DEL /F "user.js.new")
 CALL :message "Retrieving latest user.js file from github repository..."
-CALL :psdownload https://raw.githubusercontent.com/arkenfox/user.js/master/user.js "user.js.new"
+CALL :psdownload https://raw.githubusercontent.com/KoPlayz/kArkenfox/master/user.js "user.js.new"
 IF EXIST user.js.new (
 	IF DEFINED _esr (
 		CALL :message "Activating ESR section..."
@@ -321,3 +321,4 @@ CALL :message ""
 PAUSE
 MODE 80,25
 GOTO :begin
+
