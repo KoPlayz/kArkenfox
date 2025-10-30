@@ -68,7 +68,7 @@ get_prefsCleaner_version() {
 
 ## updates the prefsCleaner.sh file based on the latest public version
 update_prefsCleaner() {
-	declare -r tmpfile="$(download_file 'https://raw.githubusercontent.com/arkenfox/user.js/master/prefsCleaner.sh')"
+	declare -r tmpfile="$(download_file 'https://raw.githubusercontent.com/KoPlayz/kArkenfox/master/prefsCleaner.sh')"
 	[ -z "$tmpfile" ] && echo -e "Error! Could not download prefsCleaner.sh" && return 1 # check if download failed
 
 	[[ $(get_prefsCleaner_version "$SCRIPT_FILE") == $(get_prefsCleaner_version "$tmpfile") ]] && return 0
