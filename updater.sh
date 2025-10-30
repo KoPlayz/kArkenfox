@@ -68,7 +68,7 @@ show_banner() {
                 ####                                                                    ####
                 ############################################################################"
   echo -e "${NC}\n"
-  echo -e "Documentation for this script is available here: ${CYAN}https://github.com/arkenfox/user.js/wiki/5.1-Updater-[Options]#-maclinux${NC}\n"
+  echo -e "Documentation for this script is available here: ${CYAN}https://github.com/KoPlayz/kArkenfox/wiki/5.1-Updater-[Options]#-maclinux${NC}\n"
 }
 
 #########################
@@ -193,7 +193,7 @@ get_updater_version() {
 update_updater() {
   [ "$UPDATE" = 'no' ] && return 0 # User signified not to check for updates
 
-  declare -r tmpfile="$(download_file 'https://raw.githubusercontent.com/arkenfox/user.js/master/updater.sh')"
+  declare -r tmpfile="$(download_file 'https://raw.githubusercontent.com/KoPlayz/kArkenfox/master/updater.sh')"
   [ -z "${tmpfile}" ] && echo -e "${RED}Error! Could not download updater.sh${NC}" && return 1 # check if download failed
 
   if [[ $(get_updater_version "$SCRIPT_FILE") < $(get_updater_version "${tmpfile}") ]]; then
@@ -247,7 +247,7 @@ remove_comments() { # expects 2 arguments: from-file and to-file
 
 # Applies latest version of user.js and any custom overrides
 update_userjs() {
-  declare -r newfile="$(download_file 'https://raw.githubusercontent.com/arkenfox/user.js/master/user.js')"
+  declare -r newfile="$(download_file 'https://raw.githubusercontent.com/KoPlayz/kArkenfox/master/user.js')"
   [ -z "${newfile}" ] && echo -e "${RED}Error! Could not download user.js${NC}" && return 1 # check if download failed
 
   echo -e "Please observe the following information:
@@ -367,7 +367,7 @@ if [ $# != 0 ]; then
           ESR=true
           ;;
         r)
-          tfile="$(download_file 'https://raw.githubusercontent.com/arkenfox/user.js/master/user.js')"
+          tfile="$(download_file 'https://raw.githubusercontent.com/KoPlayz/kArkenfox/master/user.js')"
           [ -z "${tfile}" ] && echo -e "${RED}Error! Could not download user.js${NC}" && exit 1 # check if download failed
           mv "$tfile" "${tfile}.js"
           echo -e "${ORANGE}Warning: user.js was saved to temporary file ${tfile}.js${NC}"
