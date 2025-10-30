@@ -4,7 +4,7 @@ TITLE arkenfox user.js updater
 REM ## arkenfox user.js updater for Windows
 REM ## author: @claustromaniac
 REM ## version: 4.20
-REM ## instructions: https://github.com/arkenfox/user.js/wiki/5.1-Updater-[Options]#-windows
+REM ## instructions: https://github.com/KoPlayz/kArkenfox/wiki/5.1-Updater-[Options]#-windows
 
 SET v=4.19
 
@@ -59,7 +59,7 @@ IF DEFINED _updateb (
 		CALL :message "Updating script..."
 		REM Uncomment the next line and comment out the PowerShell call for testing.
 		REM COPY /B /Y "!_myname!.bat" "[updated]!_myname!.bat" >nul
-		CALL :psdownload https://raw.githubusercontent.com/arkenfox/user.js/master/updater.bat "[updated]!_myname!.bat"
+		CALL :psdownload https://raw.githubusercontent.com//master/updater.bat "[updated]!_myname!.bat"
 		IF EXIST "[updated]!_myname!.bat" (
 			START /min CMD /C "[updated]!_myname!.bat" !_myparams!
 		) ELSE (
@@ -321,4 +321,5 @@ CALL :message ""
 PAUSE
 MODE 80,25
 GOTO :begin
+
 
