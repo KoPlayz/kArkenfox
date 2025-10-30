@@ -1,7 +1,7 @@
 /******
-*    name: arkenfox user.js
-*    date: 14 August 2025
-* version: 140
+*    name: arkenfox user.js / Modified by KoPlayz0
+*    date: 14 August 2025/22 October 2025
+* version: k140
 *    urls: https://github.com/arkenfox/user.js [repo]
 *        : https://arkenfox.github.io/gui/ [interactive]
 * license: MIT: https://github.com/arkenfox/user.js/blob/master/LICENSE.txt
@@ -85,15 +85,15 @@ user_pref("_user.js.parrot", "0100 syntax error: the parrot's dead!");
  * 0=blank, 1=home, 2=last visited page, 3=resume previous session
  * [NOTE] Session Restore is cleared with history (2811+), and not used in Private Browsing mode
  * [SETTING] General>Startup>Restore previous session ***/
-user_pref("browser.startup.page", 0);
+user_pref("browser.startup.page", 1);
 /* 0103: set HOME+NEWWINDOW page
  * about:home=Firefox Home (default, see 0105), custom URLs..., Blank Page
  * [SETTING] Home>New Windows and Tabs>Homepage and new windows ***/
-user_pref("browser.startup.homepage", "chrome://browser/content/blanktab.html");
+user_pref("browser.startup.homepage", "about:home");
 /* 0104: set NEWTAB page
  * true=Firefox Home (default, see 0105), false=blank page
  * [SETTING] Home>New Windows and Tabs>New tabs ***/
-user_pref("browser.newtabpage.enabled", false);
+user_pref("browser.newtabpage.enabled", true);
 /* 0105: disable sponsored content on Firefox Home (Activity Stream)
  * [SETTING] Home>Firefox Home Content ***/
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); // [FF58+] Sponsored stories
@@ -276,8 +276,8 @@ user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false); // [FF92+]
  * [NOTE] Both must be true for live search to work in the location bar
  * [SETUP-CHROME] Override these if you trust and use a privacy respecting search engine
  * [SETTING] Search>Show search suggestions | Show search suggestions in address bar results ***/
-user_pref("browser.search.suggest.enabled", false);
-user_pref("browser.urlbar.suggest.searches", false);
+user_pref("browser.search.suggest.enabled", true);
+user_pref("browser.urlbar.suggest.searches", true);
 /* 0805: disable urlbar trending search suggestions [FF118+]
  * [SETTING] Search>Search Suggestions>Show trending search suggestions (FF119) ***/
 user_pref("browser.urlbar.trending.featureGate", false);
@@ -650,7 +650,6 @@ user_pref("privacy.clearOnShutdown_v2.formdata", true);
  * [WARNING] Be selective with what sites you "Allow", as they also disable partitioning (1767271)
  * [SETTING] to add site exceptions: Ctrl+I>Permissions>Cookies>Allow (when on the website in question)
  * [SETTING] to manage site exceptions: Options>Privacy & Security>Permissions>Settings ***/
-user_pref("privacy.clearOnShutdown_v2.cookiesAndStorage", true);
 
 /** SANITIZE SITE DATA: IGNORES "ALLOW" SITE EXCEPTIONS ***/
 /* 2820: set manual "Clear Data" items [SETUP-CHROME] [FF128+]
@@ -803,8 +802,8 @@ user_pref("_user.js.parrot", "4500 syntax error: the parrot's popped 'is clogs")
 /* 4502: set RFP new window size max rounded values [FF55+]
  * [SETUP-CHROME] sizes round down in hundreds: width to 200s and height to 100s, to fit your screen
  * [1] https://bugzilla.mozilla.org/1330882 ***/
-user_pref("privacy.window.maxInnerWidth", 1600);
-user_pref("privacy.window.maxInnerHeight", 900);
+//user_pref("privacy.window.maxInnerWidth", 1600);
+//user_pref("privacy.window.maxInnerHeight", 900);
 /* 4503: disable mozAddonManager Web API [FF57+]
  * [NOTE] To allow extensions to work on AMO, you also need 2662
  * [1] https://bugzilla.mozilla.org/buglist.cgi?bug_id=1384330,1406795,1415644,1453988 ***/
@@ -849,7 +848,7 @@ user_pref("browser.link.open_newwindow", 3); // [DEFAULT: 3]
  * [1] https://searchfox.org/mozilla-central/source/dom/tests/browser/browser_test_new_window_from_content.js ***/
 user_pref("browser.link.open_newwindow.restriction", 0);
 /* 4520: disable WebGL (Web Graphics Library) ***/
-   // user_pref("webgl.disabled", true);
+   user_pref("webgl.disabled", false);
 
 /*** [SECTION 5000]: OPTIONAL OPSEC
    Disk avoidance, application data isolation, eyeballs...
